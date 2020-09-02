@@ -5,13 +5,18 @@ namespace SimpleUser.Data
 {
     public class MockSimpleUserRepo : ISimpleUserRepo
     {
-        public IEnumerable<User> GetUser()
+        public void CreateUser(User user)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public IEnumerable<User> GetAllUser()
         {
             var users = new List<User>
             {
-                new User {id=0, Username="Kaique", Email="kaique30@hotmail.com",Password="123"},
-                new User {id=1, Username="Joao", Email="joao@hotmail.com",Password="123"},
-                new User {id=2, Username="Maria", Email="maria@hotmail.com",Password="123"},
+                new User {Id=0, Username="Kaique", Email="kaique30@hotmail.com",Password="123"},
+                new User {Id=1, Username="Joao", Email="joao@hotmail.com",Password="123"},
+                new User {Id=2, Username="Maria", Email="maria@hotmail.com",Password="123"},
 
             };
 
@@ -20,7 +25,12 @@ namespace SimpleUser.Data
 
         public User GetUserbyId(int id)
         {
-                return new User {id=0, Username="Kaique", Email="kaique30@hotmail.com",Password="123"};
+                return new User {Id=0, Username="Kaique", Email="kaique30@hotmail.com",Password="123"};
+        }
+
+        public bool SaveChanges()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

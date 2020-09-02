@@ -5,8 +5,13 @@ namespace SimpleUser.Data
 {
     public interface ISimpleUserRepo
     {
-        IEnumerable<User> GetUser();
+        bool SaveChanges();
+
+        IEnumerable<User> GetAllUser();
         User GetUserbyId(int id);
+
+        void CreateUser(User user);
+
         
     }
 }
