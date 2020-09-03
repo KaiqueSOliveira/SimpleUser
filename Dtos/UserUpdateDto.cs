@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SimpleUser.Dtos
 {
-    public class UserCreateDto
+    public class UserUpdateDto
     {
         [Required] 
         [MaxLength(250)]
