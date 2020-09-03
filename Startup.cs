@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using SimpleUser.Data;
+using Newtonsoft.Json.Serialization;
 
 namespace SimpleUser
 {
@@ -30,7 +31,9 @@ namespace SimpleUser
             services.AddDbContext<SimpleUserContext>(opt => opt.UseSqlServer
                 (Configuration.GetConnectionString("SimpleUserConnection")));
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(s =>{
+                s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            });
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

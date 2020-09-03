@@ -9,9 +9,9 @@ namespace SimpleUser.Data
 
         IEnumerable<User> GetAllUser();
         User GetUserbyId(int id);
-
         void CreateUser(User user);
-
+        void UpdateUser(User user);
+        void DeleteUser(User user);
         
     }
 }
