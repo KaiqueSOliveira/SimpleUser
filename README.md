@@ -2,5 +2,4 @@
 
 ### language -> C#
 ### db -> SQL Server
-### authentication -> Jason Web Token (JWT)
 ### architeture -> MVC based 
